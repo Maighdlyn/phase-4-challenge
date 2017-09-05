@@ -1,1 +1,1 @@
-console.log('hello from the browser JavaScript')
+// console.log('hello from the browser JavaScript')
