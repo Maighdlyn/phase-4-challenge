@@ -106,3 +106,8 @@ button{
   justify-content: center;
   align-items: center;
 }
+
+.delete{
+  max-width: 2.25em;
+  max-height: 2.25em;
+}
