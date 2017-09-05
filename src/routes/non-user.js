@@ -11,9 +11,14 @@ router.get('/', (req, res) => {
   })
 })
 
-router.route('/signin')
+router.route('/sign-in')
   .get((req, res) => {
     res.render('sign-in')
+  })
+
+router.route('/sign-up')
+  .get((req, res) => {
+    res.render('sign-up')
   })
 
 router.get('/albums/:albumID', (req, res) => {
