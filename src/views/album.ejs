@@ -1,10 +1,45 @@
 <%- include partials/header.ejs %>
+<div class="two-thirds center">
 
-<h1><%= album.title %></h1>
-  <em>by <%= album.artist %></em>
+<div class="column center">
+  <h1><%= album.title %></h1>
+  <h3>by <%= album.artist %></h3>
+</div>
 
+
+<div class="row-sp-btwn">
   <h2>Reviews</h2>
+  <button type="add-review" name="button">Add review</button>
+</div>
 
-  <!-- TODO: implement album reviews -->
 
+<!-- TODO: Replace review text with actual data -->
+  <div class="box">
+    <div class="row-sp-btwn">
+      <h2>Album Title</h2>
+      <h3>review date</h3>
+    </div>
+    <p>review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review</p>
+    <p>by <a href="#">reviewer name</a></p>
+  </div>
+
+  <div class="box">
+    <div class="row-sp-btwn">
+      <h2>Album Title</h2>
+      <h3>review date</h3>
+    </div>
+    <p>review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review</p>
+    <p>by <a href="#">reviewer name</a></p>
+  </div>
+
+  <div class="box">
+    <div class="row-sp-btwn">
+      <h2>Album Title</h2>
+      <h3>review date</h3>
+    </div>
+    <p>review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review</p>
+    <p>by <a href="#">reviewer name</a></p>
+  </div>
+
+</div>
 <%- include partials/footer.ejs %>

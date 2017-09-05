@@ -31,11 +31,22 @@ h1, h2, h3{
   color: rgb(255, 224, 139);
 }
 
+.column{
+  display:flex;
+  flex-direction: column;
+}
+
 .row-sp-btwn{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .vinyl {
@@ -58,11 +69,17 @@ h1, h2, h3{
 .one-third {
   width: 33%;
   padding: 2em;
+  flex-direction:column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .two-thirds {
   width: 66%;
   padding: 2em;
+  flex-direction:column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .box {
