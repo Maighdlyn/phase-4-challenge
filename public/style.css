@@ -43,19 +43,20 @@ button{
   flex-direction: column;
 }
 
-.row-sp-btwn{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
 .center{
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.row-sp-btwn{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
 
 .vinyl {
   font-family: 'Poiret One', cursive;
