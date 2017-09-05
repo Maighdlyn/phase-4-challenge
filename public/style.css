@@ -31,6 +31,11 @@ h1, h2, h3{
   color: rgb(255, 224, 139);
 }
 
+textarea, input{
+  padding: .5em;
+  font-size: .75em;
+}
+
 button{
   border-radius: 10px;
   font-size: 1em;
