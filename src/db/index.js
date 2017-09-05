@@ -15,15 +15,12 @@ function getAlbumsByID(albumID, cb) {
 }
 
 function _query(sql, variables, cb) {
-  console.log('QUERY ->', sql.replace(/[\n\s]+/g, ' '), variables)
-
   client.query(sql, variables, (error, result) => {
     if (error) {
-      console.log('QUERY -> !!ERROR!!')
+      console.warn('QUERY -> !!ERROR!!')
       console.error(error)
       cb(error)
     } else {
-      console.log('QUERY ->', JSON.stringify(result.rows))
       cb(error, result.rows)
     }
   })
