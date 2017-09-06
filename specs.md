@@ -199,12 +199,12 @@ Users can:
 - [X] __20:__ Have the pop-up dismissed after clicking Cancel.
 - [X] __20:__ Have the review deleted from the database and removed from the album page after clicking Confirm.
 - [X] __20:__ View a button with the label "Add Review".
-- [ ] __20:__ Be redirected to the new review page (e.g. `/albums/<ALBUM ID>/reviews/new`) the after clicking the "Add Review" button.
+- [X] __20:__ Be redirected to the new review page (e.g. `/albums/<ALBUM ID>/reviews/new`) the after clicking the "Add Review" button.
 
 Users CANNOT:
 
-- [ ] __20:__ Delete a review when not logged in.
-- [ ] __20:__ Delete another user's review.
+- [X] __20:__ Delete a review when not logged in.
+- [X] __20:__ Delete another user's review.
 
 Layout:
 
