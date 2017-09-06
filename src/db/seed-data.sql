@@ -12,7 +12,7 @@ INSERT INTO
 VALUES
   ('Arya Stark', 'NoOne@ravens.com', 'needle'),
   ('Jon Snow', 'KingOfTheNorth@ravens.com', 'ghost'),
-  ('Daenery', 'Khaleesi@ravens.com', 'dragons')
+  ('Daenerys Targaryen', 'Khaleesi@ravens.com', 'dragons')
   ;
 
   INSERT INTO
