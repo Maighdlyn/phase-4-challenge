@@ -32,7 +32,7 @@ const getReviewsByUserId = (userId) => {
       ON reviews.user_id = users.user_id
     LEFT OUTER JOIN albums
       ON reviews.album_id = albums.id
-    WHERE users.user_id = 3
+    WHERE users.user_id = $1
     ORDER BY date_created DESC
     `, [userId])
     .catch((error) => {
