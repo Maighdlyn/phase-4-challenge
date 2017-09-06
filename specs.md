@@ -66,8 +66,8 @@ Content in the header varies based on the user's authentication state.
 Users can:
 
 - [X] __20:__ See the name of the website in the site-wide header.
-- [ ] __20:__ See links to "Sign Up" and "Sign In" when logged out.
-- [ ] __20:__ See links to "Profile" and "Sign Out" when logged in.
+- [X] __20:__ See links to "Sign Up" and "Sign In" when logged out.
+- [X] __20:__ See links to "Profile" and "Sign Out" when logged in.
 
 Layout:
 
@@ -150,11 +150,11 @@ Users are able to sign out.
 
 Users can:
 
-- [ ] __20:__ Be redirected to the home page (e.g. `/`) after signing out by clicking the Sign Out button.
+- [X] __20:__ Be redirected to the home page (e.g. `/`) after signing out by clicking the Sign Out button.
 
 Users CANNOT:
 
-- [ ] __20:__ Perform any actions that require a user to be signed in after signing out.
+- [X] __20:__ Perform any actions that require a user to be signed in after signing out.
 
 ## User Profile
 
