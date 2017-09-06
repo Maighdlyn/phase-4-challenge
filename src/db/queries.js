@@ -38,5 +38,5 @@ module.exports = {
   getAlbums,
   getAlbumById,
   createUser,
-  getUserByEmail
+  getUserByEmail,
 }
