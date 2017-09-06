@@ -26,14 +26,10 @@ const createUser = (name, email, password) => {
     VALUES
       ($1, $2, $3)
     `, [name, email, password])
-    .then(user => console.log(user))
-    .catch(console.error('oh nooes'))
 }
-
-createUser('Emma', 'emma@email.com', 'Me')
-
 
 module.exports = {
   getAlbums,
   getAlbumById,
+  createUser
 }
