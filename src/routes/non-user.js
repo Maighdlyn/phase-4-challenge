@@ -58,9 +58,9 @@ router.route('/users/:id')
 
 router.get('/albums/:albumId', (req, res) => {
   const albumId = req.params.albumId
-  queries.getAlbumById(albumId)
-    .then((album) => {
-      res.render('album', {album})
+  queries.getReviewsByAlbumId(albumId)
+    .then((reviews) => {
+      res.render('album', {reviews})
     })
     .catch((error) => {
       res.status(500).render('error', {error})

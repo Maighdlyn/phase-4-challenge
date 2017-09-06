@@ -49,6 +49,22 @@ const getReviewsByUserId = (userId) => {
     })
 }
 
+const getReviewsByAlbumId = (albumId) => {
+  return db.many(`
+    SELECT * FROM reviews
+    JOIN users
+      ON reviews.user_id = users.user_id
+    RIGHT OUTER JOIN albums
+      ON reviews.album_id = albums.id
+    WHERE albums.id = $1
+    ORDER BY date_created DESC
+    `, [albumId])
+    .catch((error) => {
+      console.error('\nError in queries.getReviewsByAlbumId\n')
+      throw error
+    })
+}
+
 const createUser = (name, email, password) => {
   return db.none(`
     INSERT INTO
@@ -77,4 +93,5 @@ module.exports = {
   getReviewsByUserId,
   deleteReviewById,
   getReviewById,
+  getReviewsByAlbumId,
 }
