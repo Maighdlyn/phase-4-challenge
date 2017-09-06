@@ -10,15 +10,6 @@ router.get('/', (req, res) => {
     })
 })
 
-//   (() => {
-//     if (error) {
-//       res.status(500).render('error', {error})
-//     } else {
-//       res.render('index', {albums})
-//     }
-//   })
-// })
-
 router.route('/sign-in')
   .get((req, res) => {
     res.render('sign-in')
@@ -34,17 +25,11 @@ router.route('/profile/:profileId')
     res.render('profile')
   })
 
-router.get('/albums/:albumID', (req, res) => {
-  const albumID = req.params.albumID
-
-  db.getAlbumsByID(albumID, (error, albums) => {
-    if (error) {
-      res.status(500).render('error', {error})
-    } else {
-      const album = albums[0]
-      res.render('album', {album})
-    }
-  })
+router.get('/albums/:albumId', (req, res) => {
+  const albumId = req.params.albumId
+  queries.getAlbumById(albumId)
+    .then(album => res.render('album', {album}))
+    .catch(error => res.status(500).render('error', {error}))
 })
 
 module.exports = router
