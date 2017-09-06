@@ -4,10 +4,13 @@ const user = require('./user-only')
 
 router.use((req, res, next) => {
   let loggedIn = false
+  let userId = null
   if (req.session.user) {
     loggedIn = true
+    userId = req.session.user.user_id
   }
-  res.locals = {loggedIn}
+  res.locals = {loggedIn, userId}
+  console.log(res.locals);
   next()
 })
 
