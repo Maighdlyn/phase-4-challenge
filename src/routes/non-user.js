@@ -56,8 +56,12 @@ router.route('/profile/:profileId')
 router.get('/albums/:albumId', (req, res) => {
   const albumId = req.params.albumId
   queries.getAlbumById(albumId)
-    .then(album => res.render('album', {album}))
-    .catch(error => res.status(500).render('error', {error}))
+    .then((album) => {
+      res.render('album', {album})
+    })
+    .catch((error) => {
+      res.status(500).render('error', {error})
+    })
 })
 
 module.exports = router

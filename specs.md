@@ -109,8 +109,8 @@ Users can:
 
 Users CANNOT:
 
-- [ ] __30:__ Sign up without a name value.
-- [ ] __30:__ Sign up without an email address value.
+- [X] __30:__ Sign up without a name value.
+- [X] __30:__ Sign up without an email address value.
 - [X] __30:__ Sign up with an email that is already in use.
 
 Layout:
@@ -230,7 +230,7 @@ Users can:
 Users CANNOT:
 
 - [ ] __20:__ Submit a review when not logged in.
-- [ ] __20:__ Submit an empty review.
+- [X] __20:__ Submit an empty review.
 
 Layout:
 
