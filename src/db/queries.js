@@ -26,7 +26,7 @@ const getUserByEmail = (email) => {
 }
 
 const getReviewsByUserId = (userId) => {
-  return db.oneormany(`
+  return db.many(`
     SELECT * FROM reviews
     RIGHT OUTER JOIN users
       ON reviews.user_id = users.user_id
@@ -55,4 +55,5 @@ module.exports = {
   getAlbumById,
   createUser,
   getUserByEmail,
+  getReviewsByUserId,
 }
