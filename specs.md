@@ -229,7 +229,7 @@ Users can:
 
 Users CANNOT:
 
-- [ ] __20:__ Submit a review when not logged in.
+- [X] __20:__ Submit a review when not logged in.
 - [X] __20:__ Submit an empty review.
 
 Layout:
