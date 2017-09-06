@@ -1,15 +1,23 @@
 const router = require('express').Router()
-const db = require('../db')
+// const db = require('../db')
+const queries = require('../db/queries.js')
 
 router.get('/', (req, res) => {
-  db.getAlbums((error, albums) => {
-    if (error) {
+  queries.getAlbums()
+    .then(albums => res.render('index', {albums}))
+    .catch((error) => {
       res.status(500).render('error', {error})
-    } else {
-      res.render('index', {albums})
-    }
-  })
+    })
 })
+
+//   (() => {
+//     if (error) {
+//       res.status(500).render('error', {error})
+//     } else {
+//       res.render('index', {albums})
+//     }
+//   })
+// })
 
 router.route('/sign-in')
   .get((req, res) => {
