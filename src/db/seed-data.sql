@@ -6,3 +6,10 @@ VALUES
   ('Melodrama', 'Lorde'),
   ('In Rainbows', 'Radiohead')
 ;
+
+INSERT INTO
+  users (name, email, password)
+VALUES
+  ('Arya Stark', 'NoOne@ravens.com', 'needle'),
+  ('Jon Snow', 'KingOfTheNorth@ravens.com', 'ghost'),
+  ('Daenery', 'Khaleesi@ravens.com', 'dragons')
