@@ -1,6 +1,10 @@
 <div class="navbar">
   <a href="/"><h1 class="vinyl">Vinyl</h1></a>
 
-  <a href="/sign-in"><h3>Sign In</h3></a>
-  <a href="/sign-up"><h3>Sign Up</h3></a>
+  <% if (loggedIn) { %>
+    <p>loggedIn</p>
+  <% } else { %>
+    <a href="/sign-in"><h3>Sign In</h3></a>
+    <a href="/sign-up"><h3>Sign Up</h3></a>
+  <% } %>
 </div>
