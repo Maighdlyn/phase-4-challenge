@@ -4,23 +4,35 @@ const queries = require('../db/queries.js')
 
 router.get('/', (req, res) => {
   queries.getAlbums()
-    .then(albums => res.render('index', {albums}))
+    .then((albums) => {
+      res.render('index', {albums})
+    })
     .catch((error) => {
       res.status(500).render('error', {error})
     })
 })
 
-router.route('/sign-in')
-  .get((req, res) => {
-    res.render('sign-in')
-  })
+router.get('/sign-in', (req, res) => {
+  res.render('sign-in')
+})
+
+router.post('/sign-in', (req, res) => {
+  queries.getUserByEmail(req.body.email)
+    .then((user) => {
+      if(user.password === req.body.password) {
+        console.log('it matches');
+      } else {
+        console.log('wrong password');
+      }
+    })
+})
+
 
 router.get('/sign-up', (req, res) => {
   res.render('sign-up')
 })
 
 router.post('/sign-up', (req, res) => {
-  console.log('In the sign-up post');
   const name = req.body.name
   const email = req.body.email
   const password = req.body.password
