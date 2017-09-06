@@ -3,12 +3,16 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const routes = require('./routes')
 const session = require('express-session')
+const Simple = require('connect-pg-simple')(session)
 
 const port = process.env.PORT || 3000
 
 const app = express()
 
 const sessionOptions = {
+  store: new Simple({
+  conString: process.env.DATABASE_URL || `postgres://localhost:5432/vinyl`
+}),
   name: 'session',
   secret: 'Chamber of Secrets',
   cookie: {maxAge: 1000 * 60 * 60 * 24},
@@ -24,6 +28,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(session(sessionOptions))
 
+app.use(session(sessionOptions))
 app.use('/', routes)
 
 app.use((req, res) => {
