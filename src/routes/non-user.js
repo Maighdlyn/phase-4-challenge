@@ -6,8 +6,6 @@ router.get('/', (req, res) => {
     .then((reviewsAndAlbums) => {
       const reviews = reviewsAndAlbums.slice(0, 3)
       const albums = reviewsAndAlbums.slice(3)
-      console.log('\nreviews\n', reviews)
-      console.log('\nalbums\n', albums)
       res.render('index', {reviews, albums})
     })
     .catch((error) => {
