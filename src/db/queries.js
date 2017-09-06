@@ -17,7 +17,7 @@ const getAlbumById = (albumId) => {
 
 const getUserByEmail = (email) => {
   return db.one(`
-    SELECT * FROM users WHERE email = $1
+    SELECT * FROM users WHERE LOWER(email) = LOWER($1)
     `, [email])
     .catch((error) => {
       console.error('\nError in queries.getUserByEmail\n')
