@@ -1,5 +1,4 @@
 const router = require('express').Router()
-// const db = require('../db')
 const queries = require('../db/queries.js')
 
 router.get('/', (req, res) => {
@@ -25,7 +24,7 @@ router.post('/sign-in', (req, res) => {
           if (error) {
             console.error('Error saving session')
             throw error
-          } else res.redirect(`/profile/${user.user_id}`)
+          } else res.redirect(`/users/${user.user_id}`)
         })
       } else { console.error('Incorrect password') }
     })
@@ -48,7 +47,7 @@ router.post('/sign-up', (req, res) => {
     })
 })
 
-router.route('/profile/:id')
+router.route('/users/:id')
   .get((req, res) => {
     queries.getReviewsByUserId(req.params.id)
       .then((reviewsAndUser) => {

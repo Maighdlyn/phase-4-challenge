@@ -25,6 +25,14 @@ const getUserByEmail = (email) => {
     })
 }
 
+const getReviewById = (id) => {
+  return db.one('SELECT * FROM reviews WHERE review_id = $1', [id])
+    .catch((error) => {
+      console.error('\nError in queries.getReviewById\n')
+      throw error
+    })
+}
+
 const getReviewsByUserId = (userId) => {
   return db.many(`
     SELECT * FROM reviews
@@ -50,10 +58,23 @@ const createUser = (name, email, password) => {
     `, [name, email, password])
 }
 
+const deleteReviewById = (reviewId) => {
+  return db.none(`
+    DELETE FROM reviews
+      WHERE review_id = $1
+    `, [reviewId])
+    .catch((error) => {
+      console.error('\nError in queries.createReview\n')
+      throw error
+    })
+}
+
 module.exports = {
   getAlbums,
   getAlbumById,
   createUser,
   getUserByEmail,
   getReviewsByUserId,
+  deleteReviewById,
+  getReviewById,
 }
