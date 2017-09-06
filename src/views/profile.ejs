@@ -27,9 +27,7 @@
             <h3><%= review.date_created %></h3>
 
             <% if (review.user_id === userId) { %>
-              <div class="delete">
-                <img src="/pictures/trash.png" alt="delete" data-review-id='<%= review.review_id %>'>
-              </div>
+              <img src="/pictures/trash.png" alt="delete" class="delete" data-review-id='<%= review.review_id %>'>
             <% } %>
 
           </div>
