@@ -65,6 +65,19 @@ const getReviewsByAlbumId = (albumId) => {
     })
 }
 
+const getThreeReviewsAndAllAlbums = () => {
+  return db.many(`
+    SELECT * FROM reviews
+      JOIN users
+        ON reviews.user_id = users.user_id
+      JOIN albums
+        ON reviews.album_id = albums.id
+      ORDER BY date_created DESC
+      LIMIT 3;
+    SELECT * FROM albums;
+    `)
+}
+
 const createUser = (name, email, password) => {
   return db.none(`
     INSERT INTO
@@ -108,4 +121,5 @@ module.exports = {
   getReviewById,
   getReviewsByAlbumId,
   createReview,
+  getThreeReviewsAndAllAlbums
 }
