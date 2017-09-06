@@ -25,7 +25,7 @@
             <h2><%= review.title %></h2>
             <h3><%= review.date_created %></h3>
             <div class="delete">
-              <img src="/pictures/trash.png" alt="delete">
+              <img src="/pictures/trash.png" alt="delete" data-review-id='<%= review.review_id %>'>
             </div>
           </div>
           <p><%= review.content %></p>
