@@ -15,6 +15,16 @@ const getAlbumById = (albumId) => {
     `, [albumId])
 }
 
+const getUserByEmail = (email) => {
+  return db.one(`
+    SELECT * FROM users WHERE email = $1
+    `, [email])
+    .catch((error) => {
+      console.error('\nError in queries.getUserByEmail\n')
+      throw error
+    })
+}
+
 const createUser = (name, email, password) => {
   return db.none(`
     INSERT INTO
@@ -28,4 +38,5 @@ module.exports = {
   getAlbums,
   getAlbumById,
   createUser,
+  getUserByEmail
 }
