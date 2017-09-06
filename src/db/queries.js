@@ -31,5 +31,5 @@ const createUser = (name, email, password) => {
 module.exports = {
   getAlbums,
   getAlbumById,
-  createUser
+  createUser,
 }

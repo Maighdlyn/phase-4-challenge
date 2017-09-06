@@ -15,10 +15,22 @@ router.route('/sign-in')
     res.render('sign-in')
   })
 
-router.route('/sign-up')
-  .get((req, res) => {
-    res.render('sign-up')
-  })
+router.get('/sign-up', (req, res) => {
+  res.render('sign-up')
+})
+
+router.post('/sign-up', (req, res) => {
+  console.log('In the sign-up post');
+  const name = req.body.name
+  const email = req.body.email
+  const password = req.body.password
+  queries.createUser(name, email, password)
+    .then(res.redirect('/sign-in'))
+    .catch((error) => {
+      console.error('Error in non-user.createUser')
+      throw error
+    })
+})
 
 router.route('/profile/:profileId')
   .get((req, res) => {
