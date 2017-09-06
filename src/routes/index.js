@@ -10,7 +10,6 @@ router.use((req, res, next) => {
     userId = req.session.user.user_id
   }
   res.locals = {loggedIn, userId}
-  console.log(res.locals);
   next()
 })
 
