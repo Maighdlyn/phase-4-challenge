@@ -48,9 +48,13 @@ router.post('/sign-up', (req, res) => {
     })
 })
 
-router.route('/profile/:profileId')
+router.route('/profile/:id')
   .get((req, res) => {
-    res.render('profile')
+    queries.getReviewsByUserId(req.params.id)
+      .then((reviewsAndUser) => {
+        // console.log(reviewsAndUser);
+        res.render('profile', {reviewsAndUser})
+      })
   })
 
 router.get('/albums/:albumId', (req, res) => {
