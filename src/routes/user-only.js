@@ -1,9 +1,19 @@
 const router = require('express').Router()
 const queries = require('../db/queries.js')
 
-router.route('/new-review')
+router.route('/albums/:albumId/reviews/new')
   .get((req, res) => {
-    res.render('new-review')
+    queries.getAlbumById(req.params.albumId)
+      .then((album) => {
+        res.render('new-review', {album})
+      })
+  })
+  .post((req, res) => {
+    const reviewContent = req.body.content
+    const userId = res.locals.userId
+    const albumId = req.params.albumId
+    queries.createReview(reviewContent, userId, albumId)
+      .then(res.redirect(`/albums/${albumId}`))
   })
 
 router.route('/sign-out')

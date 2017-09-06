@@ -14,6 +14,12 @@ router.use((req, res, next) => {
 })
 
 router.use('/', nonUser)
+
+router.use((req, res, next) => {
+  if (req.session.user) next()
+  else res.render('permission-denied')
+})
+
 router.use('/', user)
 
 module.exports = router
