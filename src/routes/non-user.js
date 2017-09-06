@@ -20,9 +20,9 @@ router.post('/sign-in', (req, res) => {
   queries.getUserByEmail(req.body.email)
     .then((user) => {
       if(user.password === req.body.password) {
-        console.log('it matches');
-      } else {
-        console.log('wrong password');
+        console.log(user)
+        req.session.user = user
+        res.redirect(`/profile/${user.user_id}`)
       }
     })
 })
