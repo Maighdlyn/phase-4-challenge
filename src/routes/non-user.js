@@ -19,11 +19,15 @@ router.get('/sign-in', (req, res) => {
 router.post('/sign-in', (req, res) => {
   queries.getUserByEmail(req.body.email)
     .then((user) => {
-      if(user.password === req.body.password) {
-        console.log(user)
+      if (user.password === req.body.password) {
         req.session.user = user
-        res.redirect(`/profile/${user.user_id}`)
-      }
+        req.session.save((error) => {
+          if (error) {
+            console.error('Error saving session')
+            throw error
+          } else res.redirect(`/profile/${user.user_id}`)
+        })
+      } else { console.error('Incorrect password') }
     })
 })
 
