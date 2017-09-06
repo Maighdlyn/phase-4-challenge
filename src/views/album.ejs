@@ -2,53 +2,30 @@
 <div class="two-thirds center">
 
 <div class="column center">
-  <h1><%= album.title %></h1>
-  <h3>by <%= album.artist %></h3>
+  <h1><%= reviews[0].title %></h1>
+  <h3>by <%= reviews[0].artist %></h3>
 </div>
 
 
 <div class="center row-sp-btwn">
   <h1>Reviews</h1>
-  <a href="#"><button type="add-review" name="button">Add review</button></a>
+  <a href="/new-review"><button>Add review</button></a>
 </div>
 
 
-<!-- TODO: Replace review text with actual data -->
+<%reviews.forEach((review) => { %>
   <div class="box">
     <div class="row-sp-btwn">
-      <h2>Album Title</h2>
-      <h3>review date</h3>
-      <div class="delete">
-        <img src="/pictures/trash.png" alt="delete">
-      </div>
+      <h2><%= review.title %></h2>
+      <h3><%= review.date_created %></h3>
+      <% if (review.user_id === userId) { %>
+        <img src="/pictures/trash.png" alt="delete" class="delete" data-review-id='<%= review.review_id %>'>
+      <% } %>
     </div>
-    <p>review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review</p>
-    <p>by <a href="#">reviewer name</a></p>
+    <p><%= review.content %></p>
+    <p>by <a href="/users/<%= review.user_id%>"><%= review.name %></a></p>
   </div>
-
-  <div class="box">
-    <div class="row-sp-btwn">
-      <h2>Album Title</h2>
-      <h3>review date</h3>
-      <div class="delete">
-        <img src="/pictures/trash.png" alt="delete">
-      </div>
-    </div>
-    <p>review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review</p>
-    <p>by <a href="#">reviewer name</a></p>
-  </div>
-
-  <div class="box">
-    <div class="row-sp-btwn">
-      <h2>Album Title</h2>
-      <h3>review date</h3>
-      <div class="delete">
-        <img src="/pictures/trash.png" alt="delete">
-      </div>
-    </div>
-    <p>review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review review</p>
-    <p>by <a href="#">reviewer name</a></p>
-  </div>
+  <% }) %>
 
 </div>
 <%- include partials/footer.ejs %>
