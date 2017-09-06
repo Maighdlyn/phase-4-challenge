@@ -17,18 +17,25 @@
       <h3><%= reviewsAndUser[0].join_date %></h3>
     </div>
 
-    <% reviewsAndUser.forEach((review) => { %>
-      <div class="box">
-        <div class="row-sp-btwn">
-          <h2><%= review.title %></h2>
-          <h3><%= review.date_created %></h3>
-          <div class="delete">
-            <img src="/pictures/trash.png" alt="delete">
+
+    <% if(reviewsAndUser[0].title){ %>
+      <%reviewsAndUser.forEach((review) => { %>
+        <div class="box">
+          <div class="row-sp-btwn">
+            <h2><%= review.title %></h2>
+            <h3><%= review.date_created %></h3>
+            <div class="delete">
+              <img src="/pictures/trash.png" alt="delete">
+            </div>
           </div>
+          <p><%= review.content %></p>
         </div>
-        <p><%= review.content %></p>
+      <% }) %>
+    <% } else { %>
+      <div class="box">
+        <p>This user has not written any reviews</p>
       </div>
-    <% }) %>
+    <% } %>
   </div>
 
 
