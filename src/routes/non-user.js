@@ -42,11 +42,20 @@ router.post('/sign-up', (req, res) => {
   const email = req.body.email
   const password = req.body.password
   queries.createUser(name, email, password)
-    .then(res.redirect('/sign-in'))
-    .catch((error) => {
-      console.error('Error in non-user.createUser')
-      throw error
+    .then((user) => {
+      req.session.user = user
+      req.session.save((error) => {
+        if (error) {
+          console.error('Error saving session')
+          throw error
+        } else res.redirect(`/users/${user.user_id}`)
+      })
     })
+    // .then(res.redirect('/sign-in'))
+    // .catch((error) => {
+    //   console.error('Error in non-user.createUser')
+    //   throw error
+    // })
 })
 
 router.route('/users/:id')
