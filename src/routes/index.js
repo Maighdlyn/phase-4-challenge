@@ -3,7 +3,11 @@ const nonUser = require('./non-user')
 const user = require('./user-only')
 
 router.use((req, res, next) => {
-  console.log('middleware stuff')
+  let loggedIn = false
+  if (req.session.user) {
+    loggedIn = true
+  }
+  res.locals = {loggedIn}
   next()
 })
 
