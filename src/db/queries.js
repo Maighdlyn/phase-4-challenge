@@ -8,16 +8,17 @@ const db = pgp(connectionString)
 
 client.connect()
 
-function getAlbums() {
+const getAlbums = () => {
   return db.query('SELECT * FROM albums')
 }
 
-function getAlbumById(albumId) {
+const getAlbumById = (albumId) => {
   return db.one(`
     SELECT * FROM albums
       WHERE id = $1
     `, [albumId])
 }
+
 
 module.exports = {
   getAlbums,
