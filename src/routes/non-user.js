@@ -1,14 +1,13 @@
 const router = require('express').Router()
-const db = require('../db')
+// const db = require('../db')
+const queries = require('../db/queries.js')
 
 router.get('/', (req, res) => {
-  db.getAlbums((error, albums) => {
-    if (error) {
+  queries.getAlbums()
+    .then(albums => res.render('index', {albums}))
+    .catch((error) => {
       res.status(500).render('error', {error})
-    } else {
-      res.render('index', {albums})
-    }
-  })
+    })
 })
 
 router.route('/sign-in')
@@ -16,27 +15,33 @@ router.route('/sign-in')
     res.render('sign-in')
   })
 
-router.route('/sign-up')
-  .get((req, res) => {
-    res.render('sign-up')
-  })
+router.get('/sign-up', (req, res) => {
+  res.render('sign-up')
+})
+
+router.post('/sign-up', (req, res) => {
+  console.log('In the sign-up post');
+  const name = req.body.name
+  const email = req.body.email
+  const password = req.body.password
+  queries.createUser(name, email, password)
+    .then(res.redirect('/sign-in'))
+    .catch((error) => {
+      console.error('Error in non-user.createUser')
+      throw error
+    })
+})
 
 router.route('/profile/:profileId')
   .get((req, res) => {
     res.render('profile')
   })
 
-router.get('/albums/:albumID', (req, res) => {
-  const albumID = req.params.albumID
-
-  db.getAlbumsByID(albumID, (error, albums) => {
-    if (error) {
-      res.status(500).render('error', {error})
-    } else {
-      const album = albums[0]
-      res.render('album', {album})
-    }
-  })
+router.get('/albums/:albumId', (req, res) => {
+  const albumId = req.params.albumId
+  queries.getAlbumById(albumId)
+    .then(album => res.render('album', {album}))
+    .catch(error => res.status(500).render('error', {error}))
 })
 
 module.exports = router
