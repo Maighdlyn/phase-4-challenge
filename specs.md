@@ -104,14 +104,14 @@ Routing:
 
 Users can:
 
-- [ ] __20:__ Sign up for an account with name, email, and password.
+- [X] __20:__ Sign up for an account with name, email, and password.
 - [ ] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing up.
 
 Users CANNOT:
 
 - [ ] __30:__ Sign up without a name value.
 - [ ] __30:__ Sign up without an email address value.
-- [ ] __30:__ Sign up with an email that is already in use.
+- [X] __30:__ Sign up with an email that is already in use.
 
 Layout:
 
