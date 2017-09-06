@@ -1,9 +1,12 @@
 const router = require('express').Router()
 const queries = require('../db/queries.js')
 
-router.route('/new-review')
+router.route('/albums/:albumId/reviews/new')
   .get((req, res) => {
-    res.render('new-review')
+    queries.getAlbumById(req.params.albumId)
+      .then((album) => {
+        res.render('new-review', {album})
+      })
   })
 
 router.route('/sign-out')

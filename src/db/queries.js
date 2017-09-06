@@ -74,6 +74,19 @@ const createUser = (name, email, password) => {
     `, [name, email, password])
 }
 
+const createReview = (content, userId, albumId) => {
+  return db.none(`
+    INSERT INTO reviews
+      (content, user_id, album_id)
+    VALUES
+      ($1, $2, $3)
+    `, [content, userId, albumId])
+    .catch((error) => {
+      console.error('\nError in queries.createReview\n')
+      throw error
+    })
+}
+
 const deleteReviewById = (reviewId) => {
   return db.none(`
     DELETE FROM reviews
@@ -94,4 +107,5 @@ module.exports = {
   deleteReviewById,
   getReviewById,
   getReviewsByAlbumId,
+  createReview,
 }
