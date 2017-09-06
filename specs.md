@@ -84,7 +84,7 @@ Routing:
 Users can:
 
 - [X] __20:__ View all albums on the home page (under the "Records" heading).
-- [ ] __20:__ View only the _**3 most recent**_ reviews on the home page sorted by newest first.
+- [X] __20:__ View only the _**3 most recent**_ reviews on the home page sorted by newest first.
 - [X] __20:__ Click on an album title to go to the album page (e.g. `/albums/<ALBUM ID>`).
 
 Layout:
