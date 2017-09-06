@@ -104,14 +104,14 @@ Routing:
 
 Users can:
 
-- [ ] __20:__ Sign up for an account with name, email, and password.
+- [X] __20:__ Sign up for an account with name, email, and password.
 - [ ] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing up.
 
 Users CANNOT:
 
 - [ ] __30:__ Sign up without a name value.
 - [ ] __30:__ Sign up without an email address value.
-- [ ] __30:__ Sign up with an email that is already in use.
+- [X] __30:__ Sign up with an email that is already in use.
 
 Layout:
 
@@ -130,17 +130,17 @@ Routing:
 
 Users can:
 
-- [ ] __20:__ Sign in to an existing account with an email address and password.
-- [ ] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing in.
+- [X] __20:__ Sign in to an existing account with an email address and password.
+- [X] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing in.
 
 Users CANNOT:
 
-- [ ] __30:__ Sign in with an invalid email address and password combination.
+- [X] __30:__ Sign in with an invalid email address and password combination.
 
 Layout:
 
-- [ ] __10:__ The site-wide header is visible on the sign in page.
-- [ ] __20:__ The layout of the sign in page matches the wireframes.
+- [X] __10:__ The site-wide header is visible on the sign in page.
+- [X] __20:__ The layout of the sign in page matches the wireframes.
 
 ## Sign Out
 
