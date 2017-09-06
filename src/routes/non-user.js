@@ -2,9 +2,11 @@ const router = require('express').Router()
 const queries = require('../db/queries.js')
 
 router.get('/', (req, res) => {
-  queries.getAlbums()
-    .then((albums) => {
-      res.render('index', {albums})
+  queries.getThreeReviewsAndAllAlbums()
+    .then((reviewsAndAlbums) => {
+      const reviews = reviewsAndAlbums.slice(0, 3)
+      const albums = reviewsAndAlbums.slice(3)
+      res.render('index', {reviews, albums})
     })
     .catch((error) => {
       res.status(500).render('error', {error})
