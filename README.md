@@ -7,7 +7,7 @@ Part of the application has already been built for you. Your job is to take it t
 ## Quick Start
 The quickest way to get everything up and running is to run `$ npm run setup`. Then go to http://localhost:3000/ in your browser.
 
-For more information on what is occuring in that setup script, continue reading below.
+For more information on what is occurring in that setup script, continue reading below.
 
 ### Getting Started
 
