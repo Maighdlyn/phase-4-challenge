@@ -4,7 +4,12 @@ A community for record enthusiasts to review their favorite albums.
 
 Part of the application has already been built for you. Your job is to take it to completion.
 
-## Getting Started
+## Quick Start
+The quickest way to get everything up and running is to run `$ npm run setup`. Then go to http://localhost:3000/ in your browser.
+
+For more information on what is occuring in that setup script, continue reading below.
+
+### Getting Started
 
 Run `$ npm run` to see the list of commands available. To see what each command does, look at `package.json`.
 
@@ -22,7 +27,7 @@ src/
   views/              # html templates go here
 ```
 
-### Setting Up Your Database
+#### Setting Up Your Database
 
 Use the following commands to set up and seed your database:
 
