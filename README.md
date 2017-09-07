@@ -15,22 +15,15 @@ Run `$ npm run` to see the list of commands available. To see what each command 
 
 The app uses a basic Express file structure, and includes SQL files to set up the schema and import data.
 
-```sh
-src/
-  albums.sql          # seed album data
-  database.js         # database connection and queries
-  package.json        # npm standard
-  public/             # static assets go here
-  README.md           # you are here
-  schema.sql          # define database schema here
-  server.js           # web server
-  views/              # html templates go here
-```
 
 #### Setting Up Your Database
 
-Use the following commands to set up and seed your database:
+If you ran `$ npm run setup`, your database should be setup and ready to go but if you're having difficulties or want to know more about what that setup command did, here's a breakdown:
 
-1. Create PostgreSQL database `vinyl`: `$ npm run db:create`
-1. Set up database tables from `schema.sql`: `$ npm run db:schema`
-1. Load seed data from `albums.sql`: `$ npm run db:seed`
+1. `npm install` This gives you all the node modules you need.
+1. `npm run db:drop` If you already have a db called Vinyl on your machine, this will delete it.
+1. `npm run db:create` This will create a new database called Vinyl.
+1. `npm run db:schema` This will create tables in your database for users, reviews, and albums.
+1. `npm run db:seed` This populates the users, reviews, and albums tables with seed data.
+1. `npm run load-session-store` This creates a table called session that will be used for session storage with express-session and connect-pg-simple
+1. `npm run dev` This starts the server using nodemon so you can run Vinyl in your browser at http://localhost:3000/
