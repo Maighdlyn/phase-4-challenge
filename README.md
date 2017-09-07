@@ -27,3 +27,13 @@ If you ran `$ npm run setup`, your database should be setup and ready to go but 
 1. `npm run db:seed` This populates the users, reviews, and albums tables with seed data.
 1. `npm run load-session-store` This creates a table called session that will be used for session storage with express-session and connect-pg-simple
 1. `npm run dev` This starts the server using nodemon so you can run Vinyl in your browser at http://localhost:3000/
+
+#### Reset Database
+If you find yourself playing around with the schema or adding and deleting so many reviews that you just want to reset the database to its original seed data, run `npm run db:reset`
+
+This command will:
+1. `npm run db:drop` Drop existing vinyl database
+1. `npm run db:create` Create vinyl database
+1. `npm run db:schema` Create tables
+1. `npm run db:seed` Populate seed-data
+1. `npm run load-session-store` Create session storage table
