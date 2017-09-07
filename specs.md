@@ -105,7 +105,7 @@ Routing:
 Users can:
 
 - [X] __20:__ Sign up for an account with name, email, and password.
-- [ ] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing up.
+- [X] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing up.
 
 Users CANNOT:
 
