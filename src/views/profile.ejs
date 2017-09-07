@@ -23,7 +23,9 @@
       <%reviewsAndUser.forEach((review) => { %>
         <div class="box">
           <div class="row-sp-btwn">
-            <h2><%= review.title %></h2>
+            <a href="/albums/<%= review.id %>">
+              <h2><%= review.title %></h2>
+            </a>
             <h3><%= review.date_created %></h3>
 
             <% if (review.user_id === userId) { %>
